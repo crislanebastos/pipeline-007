@@ -47,15 +47,15 @@ module "bigquery-dataset-gasolina" {
 module "bucket-raw" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-raw"
+  name       = "camada-raw"
   project_id = var.project_id
   location   = var.region
 }
 
-module "bucket-curated" {
+module "bucket-trusted" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-curated"
+  name       = "camada-trusted"
   project_id = var.project_id
   location   = var.region
 }
@@ -63,7 +63,7 @@ module "bucket-curated" {
 module "bucket-pyspark-tmp" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-pyspark-tmp"
+  name       = "camada-pyspark-tmp"
   project_id = var.project_id
   location   = var.region
 }
@@ -71,7 +71,7 @@ module "bucket-pyspark-tmp" {
 module "bucket-pyspark-code" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-pyspark-code"
+  name       = "camada-pyspark-code"
   project_id = var.project_id
   location   = var.region
 }
