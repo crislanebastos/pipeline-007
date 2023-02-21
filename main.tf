@@ -1,4 +1,4 @@
 resource "google_storage_bucket" "gcs_bucket" {
-name = "terraform-files"
+name = "main-007"
 location = var.region
 }
