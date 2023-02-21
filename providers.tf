@@ -3,9 +3,10 @@ provider "google" {
   region  = var.region
 }
 
+# Armazena o "estado" do Terraform 
 terraform {
   backend "gcs" {
-    bucket = "terraformiac-007"
+    bucket = "terraform-files-007"
     prefix = "terraform/state"
   }
   required_providers {
